@@ -28,13 +28,8 @@ public class Assignment1Functionality extends TestDriver{
 		driver.findElement(login_userName).sendKeys(prop.getProperty("username"));
 		driver.findElement(login_password).sendKeys(prop.getProperty("password"));
 		takeScreenShot();
+		
 		driver.findElement(login_loginButton).click();
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(home_status)));
 		takeScreenShot();
 	}
